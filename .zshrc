@@ -117,3 +117,7 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+# Use local customer env
+if [[ -f /share/yanzhongxiang/xbash/.local_profile ]]; then
+source  /share/yanzhongxiang/xbash/.local_profile
+fi

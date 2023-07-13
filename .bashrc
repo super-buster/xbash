@@ -131,16 +131,5 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-INSTALLATION_PATH='/share/yanzhongxiang/ncurses-6.4'
-export PATH=$INSTALLATION_PATH/bin/:/share/yanzhongxiang/zsh-5.9/bin/:/share/yanzhongxiang/Downloads/proxychains-ng/bin:/share/yanzhongxiang/cuda-11.6/bin:$PATH
-export LD_LIBRARY_PATH=$INSTALLATION_PATH/lib:/share/yanzhongxiang/cuda-11.6/lib64:$LD_LIBRARY_PATH
-export CFLAGS=-I$INSTALLATION_PATH/include
-export CPPFLAGS="-I$INSTALLATION_PATH/include" 
-export LDFLAGS="-L$INSTALLATION_PATH/lib"
-export CXXFLAGS=" -fPIC"
-export CFLAGS=" -fPIC"
-export PROXYCHAINS_CONF_FILE=/share/yanzhongxiang/Downloads/proxychains-ng/bin/proxychains.conf
-alias gpustat='gpustat -i 0.5'
-export SHELL=`which zsh`      # 设置$SHELL为zsh
-exec `which zsh` -l
+[[ -f /share/yanzhongxiang/xbash/.local_profile ]] && . /share/yanzhongxiang/xbash/.local_profile
 
