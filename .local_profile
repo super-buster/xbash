@@ -1,12 +1,23 @@
-INSTALLATION_PATH='/share/yanzhongxiang/ncurses-6.4'
-export PATH=$INSTALLATION_PATH/bin/:/share/yanzhongxiang/zsh-5.9/bin/:/share/yanzhongxiang/Downloads/proxychains-ng/bin:/share/yanzhongxiang/cuda-11.6/bin:$PATH
-export LD_LIBRARY_PATH=$INSTALLATION_PATH/lib:/share/yanzhongxiang/cuda-11.6/lib64:$LD_LIBRARY_PATH
-export CFLAGS=-I$INSTALLATION_PATH/include
-export CPPFLAGS="-I$INSTALLATION_PATH/include" 
-export LDFLAGS="-L$INSTALLATION_PATH/lib"
-export CXXFLAGS=" -fPIC"
-export CFLAGS=" -fPIC"
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/share/yanzhongxiang/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/share/yanzhongxiang/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/share/yanzhongxiang/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/share/yanzhongxiang/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+export PATH=/share/yanzhongxiang/Downloads/proxychains-ng/bin:$PATH
+export HF_ENDPOINT=https://hf-mirror.com
+# export PATH=/share/yanzhongxiang/cuda-11.6/bin:$PATH
+export PATH=/usr/local/cuda-12.1/bin:$PATH
+# export LD_LIBRARY_PATH=$INSTALLATION_PATH/lib:/share/yanzhongxiang/cuda-11.6/lib64:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/usr/local/cuda-12.1/lib64:$LD_LIBRARY_PATH
 export PROXYCHAINS_CONF_FILE=/share/yanzhongxiang/Downloads/proxychains-ng/bin/proxychains.conf
-alias gpustat='gpustat -i 0.5'
-export SHELL=`which zsh`      # 设置$SHELL为zsh
-exec `which zsh` -l
+export HISTTIMEFORMAT='%F %T '
